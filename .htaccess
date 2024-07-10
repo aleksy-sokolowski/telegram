@@ -1,0 +1,17 @@
+<IfModule mod_mime.c>
+    AddEncoding br .br
+    AddEncoding gzip .gz
+    AddType application/javascript .js
+    AddType application/json .json
+    AddType application/octet-stream .unityweb
+    AddType application/wasm .wasm
+    AddType application/octet-stream .data
+    AddType application/octet-stream .mem
+    AddType text/css .css
+    AddType text/html .html
+</IfModule>
+
+<IfModule mod_headers.c>
+    # Serve correct content types, and prevent browsers from MIME-sniffing the content type.
+    Header set X-Content-Type-Options "nosniff"
+</IfModule>
